@@ -9,7 +9,7 @@
 
 get_header();
 ?>
-	<main>
+	<main class="grille-cours">
 		<?php if ( have_posts() ) : ?>
 			<?php
 			/* Start the Loop */
@@ -19,14 +19,16 @@ get_header();
 				the_post();
                 convertirTableau($tPropriété);
 				//print_r($tPropriété);
-				if ($tPropriété['typeCours'] != $precedent): 
+				if ($tPropriété['session'] != $precedent): 
 					if ("XXXXXX" != $precedent)	: ?>
 						</section>
 					<?php endif; ?>
 					<section>
 				<?php endif;
-					get_template_part( 'template-parts/content', 'grille-cours' );
-					$precedent = $tPropriété['typeCours'];
+					if ($tPropriété['session'] == $precedent) : 
+						get_template_part( 'template-parts/content', 'grille-cours' ); 
+					endif;	
+					$precedent = $tPropriété['session'];
 			endwhile;?>
 		<?php endif; ?>
 	</main><!-- #main -->
