@@ -673,7 +673,7 @@ textarea {
 
 @media (min-width: 1200px) {
   .site {
-    grid-template-columns: 80% 20%;
+    grid-template-columns: 100%;
     grid-template-areas: "header header" "main sidebar" "footer footer";
   }
 }
@@ -1583,13 +1583,21 @@ La barre du millieu
 }
 
 .grille-cours section {
-  display: grid;
-  grid-template-columns: 10% 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+
+.grille-cours section h1 {
+  flex: 0 0 auto;
+  padding: 1rem;
 }
 
 .grille-cours section div {
   display: flex;
   flex-direction: row;
+  flex: 1 1 0;
 }
 
 .grille-cours section div article {
@@ -1597,5 +1605,25 @@ La barre du millieu
   flex: 1 1;
   border: 1px solid gray;
   margin: 10px;
+  padding: 2rem;
+}
+
+.grille-cours section div article p {
+  display: none;
+}
+
+.grille-cours section div article .sigle {
+  display: block;
+  transform: rotateZ(90deg);
+}
+
+@media (min-width: 1200px) {
+  .grille-cours section div article p {
+    display: block;
+  }
+  .grille-cours section div article .sigle {
+    display: block;
+    transform: rotateZ(0deg);
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -9,8 +9,8 @@
 global $tPropriété;
 ?>
 
-<article>
+<article class="bloc-cours">
 			<p><?php echo $tPropriété['typeCours'];?></p>
-      <p><a href="<?php echo get_permalink() ?>"><?php echo $tPropriété['sigle'] ;?></a></p>
+      <p class="sigle"><a href="<?php echo get_permalink() ?>"><?php echo $tPropriété['sigle'] ;?></a></p>
       <p><?php echo $tPropriété['nbHeure'];?> </p>
 </article> 

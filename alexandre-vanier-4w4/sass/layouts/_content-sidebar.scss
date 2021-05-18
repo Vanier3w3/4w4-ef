@@ -8,7 +8,7 @@
 		"sidebar sidebar"
 		"footer footer";
 	@include desktop{
-	grid-template-columns: 80% 20%;
+	grid-template-columns: 100%;
 	grid-template-areas:
 		"header header"
 		"main sidebar"

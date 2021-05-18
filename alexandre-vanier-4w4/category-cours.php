@@ -35,9 +35,7 @@ get_header();
 						<h1><?php echo $tPropriété['session'];?></h1>
 						<div>
 				<?php endif;
-					if ($tPropriété['session'] == $precedent) : 
 						get_template_part( 'template-parts/content', 'grille-cours' ); 
-					endif;	
 					$precedent = $tPropriété['session'];
 			endwhile;?>
 		<?php endif; ?>
