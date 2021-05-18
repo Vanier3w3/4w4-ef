@@ -10,6 +10,13 @@
 get_header();
 ?>
 	<main class="grille-cours">
+	<header class="page-header">
+		<h1 class="page-title">Cours</h1>
+		<?php
+		//the_archive_title( '<h1 class="page-title">', '</h1>' );
+		the_archive_description( '<div class="archive-description">', '</div>' );
+		?>
+	</header><!-- .page-header -->
 		<?php if ( have_posts() ) : ?>
 			<?php
 			/* Start the Loop */
@@ -21,9 +28,12 @@ get_header();
 				//print_r($tPropriété);
 				if ($tPropriété['session'] != $precedent): 
 					if ("XXXXXX" != $precedent)	: ?>
+					</div>
 						</section>
 					<?php endif; ?>
 					<section>
+						<h1><?php echo $tPropriété['session'];?></h1>
+						<div>
 				<?php endif;
 					if ($tPropriété['session'] == $precedent) : 
 						get_template_part( 'template-parts/content', 'grille-cours' ); 

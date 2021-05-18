@@ -1579,5 +1579,23 @@ La barre du millieu
 .grille-cours {
   display: flex;
   flex-direction: column;
+  margin-left: 5rem;
+}
+
+.grille-cours section {
+  display: grid;
+  grid-template-columns: 10% 90%;
+}
+
+.grille-cours section div {
+  display: flex;
+  flex-direction: row;
+}
+
+.grille-cours section div article {
+  text-align: center;
+  flex: 1 1;
+  border: 1px solid gray;
+  margin: 10px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,4 +1,22 @@
 .grille-cours {
     display: flex;
     flex-direction: column;
+    margin-left: 5rem;
+
+    section {
+        display: grid;
+        grid-template-columns: 10% 90%;
+
+        div {
+            display: flex;
+            flex-direction: row;
+
+            article {
+                text-align: center;
+                flex: 1 1;
+                border: 1px solid gray;
+                margin: 10px;
+            }
+        }
+    }
 }
