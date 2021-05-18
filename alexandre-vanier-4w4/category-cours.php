@@ -34,10 +34,13 @@ get_header();
 					<section>
 						<h1><?php echo $tPropriété['session'];?></h1>
 						<div>
-				<?php endif;
-						get_template_part( 'template-parts/content', 'grille-cours' ); 
-					$precedent = $tPropriété['session'];
-			endwhile;?>
+				<?php endif;?>
+				<div <?php echo class_composant($tPropriété['typeCours']) ?> onclick="typeDeCours('<?php echo classBloc($tPropriété['typeCours']) ?>' )">
+				<?php
+					get_template_part( 'template-parts/content', 'grille-cours' ); 
+					$precedent = $tPropriété['session'];?>
+				</div>
+			<?php endwhile;?>
 		<?php endif; ?>
 	</main><!-- #main -->
 
@@ -66,3 +69,48 @@ function convertirTableau(&$tPropriété)
 	$tPropriété['session'] = substr($tPropriété['titre'], 4,1);
 	$tPropriété['typeCours'] = get_field('type_de_cours');
 }
+
+function class_composant($typeCours){
+	switch($typeCours) {
+		case 'Web':
+			return 'class="web typeCours"';
+			break;
+		case 'Jeu':
+			return 'class="jeu typeCours"';
+			break;
+		case 'Spécifique':
+			return 'class="specifique typeCours"';
+			break;
+		case 'Image 2d/3d':
+			return 'class="image typeCours"';
+			break;
+	}
+}
+
+function classBloc($typeCours){
+	switch($typeCours) {
+		case 'Web':
+			return 'web';
+			break;
+		case 'Jeu':
+			return 'jeu';
+			break;
+		case 'Spécifique':
+			return 'specifique';
+			break;
+		case 'Image 2d/3d':
+			return 'image';
+			break;
+	}
+}
+?>
+
+<script>
+	function typeDeCours(elm){
+		let cours = document.querySelectorAll(elm)
+		console.log(cours)
+		for (const element of cours){
+			element.style.backgroundColor = "gray"
+		}
+	}
+</script>
