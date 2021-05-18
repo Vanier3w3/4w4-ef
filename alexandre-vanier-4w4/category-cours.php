@@ -90,16 +90,16 @@ function class_composant($typeCours){
 function classBloc($typeCours){
 	switch($typeCours) {
 		case 'Web':
-			return 'web';
+			return '.web';
 			break;
 		case 'Jeu':
-			return 'jeu';
+			return '.jeu';
 			break;
 		case 'Spécifique':
-			return 'specifique';
+			return '.specifique';
 			break;
 		case 'Image 2d/3d':
-			return 'image';
+			return '.image';
 			break;
 	}
 }
@@ -108,7 +108,7 @@ function classBloc($typeCours){
 <script>
 	function typeDeCours(elm){
 		let cours = document.querySelectorAll(elm)
-		console.log(cours)
+		console.log(elm)
 		for (const element of cours){
 			element.style.backgroundColor = "gray"
 		}
