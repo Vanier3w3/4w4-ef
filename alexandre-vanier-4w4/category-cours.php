@@ -35,7 +35,7 @@ get_header();
 						<h1><?php echo $tPropriété['session'];?></h1>
 						<div>
 				<?php endif;?>
-				<div <?php echo class_composant($tPropriété['typeCours']) ?> onclick="typeDeCours('<?php echo classBloc($tPropriété['typeCours']) ?>' )">
+				<div <?php echo class_composant($tPropriété['typeCours']) ?>>
 				<?php
 					get_template_part( 'template-parts/content', 'grille-cours' ); 
 					$precedent = $tPropriété['session'];?>
@@ -84,6 +84,10 @@ function class_composant($typeCours){
 		case 'Image 2d/3d':
 			return 'class="image typeCours"';
 			break;
+		case 'Conception':
+			return 'class="conception typeCours"';
+			break;
+			
 	}
 }
 
@@ -100,6 +104,9 @@ function classBloc($typeCours){
 			break;
 		case 'Image 2d/3d':
 			return '.image';
+			break;
+		case 'Conception':
+			return '.conception';
 			break;
 	}
 }

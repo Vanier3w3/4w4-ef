@@ -1600,7 +1600,7 @@ La barre du millieu
   flex: 1 1 0;
 }
 
-.grille-cours section div article {
+.grille-cours section div .typeCours article {
   text-align: center;
   flex: 1 1;
   border: 1px solid gray;
@@ -1608,20 +1608,20 @@ La barre du millieu
   padding: 2rem;
 }
 
-.grille-cours section div article p {
+.grille-cours section div .typeCours article p {
   display: none;
 }
 
-.grille-cours section div article .sigle {
+.grille-cours section div .typeCours article .sigle {
   display: block;
   transform: rotateZ(90deg);
 }
 
 @media (min-width: 1200px) {
-  .grille-cours section div article p {
+  .grille-cours section div .typeCours article p {
     display: block;
   }
-  .grille-cours section div article .sigle {
+  .grille-cours section div .typeCours article .sigle {
     display: block;
     transform: rotateZ(0deg);
   }

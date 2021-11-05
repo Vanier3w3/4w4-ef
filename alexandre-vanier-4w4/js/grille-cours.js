@@ -1,7 +1,9 @@
 (function(){
-	/* Idntifier la collection de carrousel */
-		let blocCours = document.querySelectorAll('.typeCours')
-		blocCours.addEventListener('mousedown', function() {
-			console.log("hiafgbahjb")
-		})
+	let cours = document.querySelectorAll(".typeCours")
+	console.log(cours)
+	cours.addEventListener('mousedown', function() {
+		for(const element of cours){
+			console.log(element)
+		}
+	})
 }())	
